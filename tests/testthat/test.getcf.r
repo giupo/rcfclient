@@ -44,6 +44,7 @@ test_that('getcf returns a list with multiple names', {
 })
 
 test_that("getcf returns a ts with a single request", {
+  on.exit(options(ticket=NULL))
   with_mock(
     'RCurl::getURL' = function(...) {
       "{'year': 1990,'period': 1,'freq': 4, 'numbers': [0,1,2,3]}"
