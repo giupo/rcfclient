@@ -43,6 +43,7 @@ test_that('getcf returns a list with multiple names', {
   )
 })
 
+
 test_that("getcf returns a ts with a single request", {
   on.exit(options(ticket=NULL))
   with_mock(
