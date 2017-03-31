@@ -1,8 +1,7 @@
 #' Returns settings for this package
 #'
 #' @name settings
-#' @usage settings()
-#' @usage settings(TRUE)
+#' @usage settings(flush)
 #' @param flush boolean, if `TRUE` then reloads data from config file; otherwise return cached values
 #' @export
 #' @include getWorkDir.r

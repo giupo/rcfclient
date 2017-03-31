@@ -1,4 +1,4 @@
-.onLoad <- function(libname = find.package("rcfclient"), pkgname = "rcfclient") {
+.onAttach <- function(libname = find.package("rcfclient"), pkgname = "rcfclient") {
   # nocov start
   if(!file.exists(configFile())) { 
     packageStartupMessage("Creating stub config file for 'rcfclient'")
@@ -7,7 +7,7 @@
     }
 
     ini_lines <- c("[API]", "base_url=https://osi2-phys-102.utenze.bankit.it:8000/grafo")
-    writeLines(ini_lines, con=configFile())
+    write(ini_lines, file=configFile())
   }
   # nocov end
 }

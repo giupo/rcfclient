@@ -2,10 +2,7 @@
 #' interact with FA web services
 #'
 #' @name auth
-#' @usage auth()
-#' @usage auth(username, password)
-#' @usage auth(flush=TRUE)
-#' @usage auth(username, password, flush=TRUE)
+#' @usage auth(username, password, flush)
 #' @param username self-explained (it's defaulted to `rutils::whoami()`)
 #' @param password self-explained (it's defaulted to `rutils::flypwd()`)
 #' @param flush boolean: removes auth token from cache (defaults to `FALSE`: cache as long as you can)
