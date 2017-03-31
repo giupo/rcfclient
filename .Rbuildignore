@@ -15,4 +15,7 @@ rcf.Rcheck/*
 scripts
 ^lib_mgt.r
 ^packrat/
+packrat
 ^\.Rprofile$
+CONTRIBUTING.rst
+\.travis.yml

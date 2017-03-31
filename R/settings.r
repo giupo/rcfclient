@@ -2,6 +2,7 @@
 #'
 #' @name settings
 #' @usage settings()
+#' @usage settings(TRUE)
 #' @param flush boolean, if `TRUE` then reloads data from config file; otherwise return cached values
 #' @export
 #' @include getWorkDir.r

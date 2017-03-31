@@ -1,7 +1,7 @@
 .onLoad <- function(libname = find.package("rcfclient"), pkgname = "rcfclient") {
   # nocov start
   if(!file.exists(configFile())) { 
-    message("Creating stub config file for 'rcfclient'")
+    packageStartupMessage("Creating stub config file for 'rcfclient'")
     if(!file.exists(dirname(configFile()))) {
       dir.create(dirname(configFile()))
     }

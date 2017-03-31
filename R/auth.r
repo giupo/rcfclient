@@ -4,8 +4,11 @@
 #' @name auth
 #' @usage auth()
 #' @usage auth(username, password)
+#' @usage auth(flush=TRUE)
+#' @usage auth(username, password, flush=TRUE)
 #' @param username self-explained (it's defaulted to `rutils::whoami()`)
 #' @param password self-explained (it's defaulted to `rutils::flypwd()`)
+#' @param flush boolean: removes auth token from cache (defaults to `FALSE`: cache as long as you can)
 #' @return an alpha-numerical strings (aka token, aka ticket) to pass on each HTTP
 #'         request to the webservices
 #' @importFrom rutils whoami flypwd
