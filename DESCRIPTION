@@ -1,6 +1,6 @@
 Package: rcfclient
 Title: Client per la Piattaforma Grafo/Rcf
-Version: 0.0.2
+Version: 0.1.0
 Authors@R: person("Giuseppe", "Acito", email = "giuseppe.acito@bancaditalia.it", role = c("aut", "cre"))
 Description: Set of functions and utilities to read and interact with FA microservices platform.
    It provides authentication and authorization, plus reading data and metadata from FA services
