@@ -16,10 +16,13 @@ Suggests:
 Imports:
    XML,
    RCurl,
-   rutils
+   rutils,
+   RJSONIO
 Remotes: github::giupo/rutils
 Collate: 
     'getWorkDir.r'
     'settings.r'
     'auth.r'
+    'getcf.r'
+    'io.r'
     'zzz.r'

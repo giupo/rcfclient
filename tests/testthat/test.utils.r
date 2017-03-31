@@ -40,5 +40,3 @@ test_that("settings with flush reads file again",{
       expect_equal(calls, 2)
     })
 })
-
-

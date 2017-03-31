@@ -14,17 +14,31 @@
 #' @include settings.r
 #' @export
 
-auth <- function(username=whoami(), password=flypwd()) {
-  base_url <- settings()$API$base_url
-  baseurl <- paste0(.base_url, "/authjwt/login")
-  res <- postForm(baseurl, username=username, password=password,
-                  .opts = list(ssl.verifypeer = FALSE))
-  parsed <- xmlParse(res)
-  list <- xmlToList(parsed)
-  if("authenticationSuccess" %in%  names(list)) {
-    options(ticket=list$authenticationSuccess$proxyGrantingTicket)
-  } else {
-    stop("Auth failed")
+auth <- function(username=whoami(), password=flypwd(), flush=FALSE) {
+  if (flush) {
+    options(ticket=NULL)
   }
+
+  ticket <- getOption("ticket", NULL)
+  invisible(if(is.null(ticket)) {
+    base_url <- settings()$API$base_url
+    loginurl <- paste0(base_url, "/authjwt/login")
+
+    res <- postForm(
+      loginurl, username=username, password=password,
+      .opts = list(ssl.verifypeer = FALSE))
+
+    parsed <- xmlParse(res)
+    lista <- xmlToList(parsed)
+    if("authenticationSuccess" %in%  names(lista)) {
+      ticket <- lista$authenticationSuccess$proxyGrantingTicket
+      options(ticket=ticket)
+      ticket
+    } else {
+      stop("Auth failed")
+    }
+  } else {
+    ticket
+  })
 }
 
